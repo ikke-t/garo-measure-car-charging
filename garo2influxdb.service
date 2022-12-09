@@ -1,0 +1,13 @@
+[Unit]
+Description=garo2influxdb
+After=syslog.target network.target
+
+[Service]
+Type=simple
+#User=pi
+WorkingDirectory=/home/pi/src/garo
+ExecStart=/home/pi/src/garo/virtualenv/bin/python /home/pi/src/garo/garo2influxdb.py
+Restart=on-abort
+
+[Install]
+WantedBy=multi-user.target
